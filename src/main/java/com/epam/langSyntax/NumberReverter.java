@@ -2,12 +2,15 @@ package com.epam.langSyntax;
 
 public class NumberReverter {
 
-    //897
     public void revert(int number) {
-        var value = String.valueOf(number);
-        var reversed =  new StringBuilder(value).reverse().toString();
+        int reversed = 0;
+
+        while (number > 0) {
+            int digit = number % 10;
+            reversed = reversed * 10 + digit;
+            number = number / 10;
+        }
 
         System.out.println(reversed);
     }
-
 }
